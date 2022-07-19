@@ -1,30 +1,30 @@
-import { createContext, useState } from 'react';
-
-// generate random id function
-const generateId = () => Math.floor(Math.random() * 1000);
+import { createContext, useReducer, useEffect } from 'react';
+import { bookReducer } from '../reducers/bookReducer';
 
 export const BookContext = createContext();
 
 const BookContextProvider = ({ children }) => {
-  const [books, setBooks] = useState([
-    { title: 'The Beginning', author: 'Ryan Kirk', id: 1 },
-    { title: "World's Edge", author: 'Ryan Kirk', id: 2 },
-    { title: 'The Wind and The Void', author: 'Ryan Kirk', id: 3 }
-  ]);
+  // use local storage to set the books each time the date changes
+  /* define a callback function as the third argument to the useReducer function and set the initial
+     state to whatever is stored in local storage */
+  const [books, dispatch] = useReducer(bookReducer, [], () => {
+    const localData = localStorage.getItem('books');
+    // check if data exists, if it does, convert the data to JSON by using the JSON.parse() method
+    // if it doesn't exists, set it to an empty array and return the result
+    return localData ? JSON.parse(localData) : [];
+  });
 
-  const addBook = (title, author) => {
-    setBooks([...books, { title, author, id: generateId() }]);
-  };
-
-  const removeBook = (id) => {
-    setBooks(books.filter(book => book.id !== id));
-  };
+  useEffect(() => {
+    /* at the first render, store whatever is in the books variable in 
+    local storage and also when the component updates */
+    localStorage.setItem('books', JSON.stringify(books));
+  }, [books]);
 
   return (
-    <BookContext.Provider value={{books, addBook, removeBook }}>
+    <BookContext.Provider value={{books, dispatch}}>
       { children }
     </BookContext.Provider>
-  )
+  );
 }
 
 export default BookContextProvider;
