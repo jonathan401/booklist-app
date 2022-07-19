@@ -73,16 +73,16 @@ input[type='text']{
   background: #3c1f3c;
   color: #fff;
   border: 0;
+  border-radius: 6px;
+  outline: 0;
+  transition: all 0.1s;
 }
-/* input[type='submit']{
-  margin: 10px auto;
-  background: #eee;
-  border: 0;
-  padding: 6px 20px;
-  display: block;
-} */
+input[type="text"]:focus {
+  outline: 3px dotted rgb(109, 61, 109);
+  outline-offset: 3px;
+}
 .btn {
-  padding: 10px 12px;
+  padding: 10px 20px;
   display: block;
   margin: 5px auto;
   border-radius: 8px;
@@ -90,7 +90,7 @@ input[type='text']{
   color: white;
   background-color: rgb(109, 61, 109);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.1s;
   box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
 }
 .btn:hover {
