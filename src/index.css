@@ -32,3 +32,71 @@ body {
 .navbar h1 {
   margin: 10px 0;
 }
+.book-list{
+  margin: 20px;
+}
+.book-list ul{
+  padding: 7px 0;
+  list-style-type: none;
+}
+.book-list li{
+  background: #6d3d6d;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+.book-list li:hover{
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+.book-list .title{
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.2em;
+}
+.book-list .author{
+  font-size: 0.9em;
+  color: #ddd;
+}
+.empty{
+  margin: 20px;
+  text-align: center;
+}
+form{
+  padding: 20px;
+}
+input[type='text']{
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  background: #3c1f3c;
+  color: #fff;
+  border: 0;
+}
+/* input[type='submit']{
+  margin: 10px auto;
+  background: #eee;
+  border: 0;
+  padding: 6px 20px;
+  display: block;
+} */
+.btn {
+  padding: 10px 12px;
+  display: block;
+  margin: 5px auto;
+  border-radius: 8px;
+  border: 0;
+  color: white;
+  background-color: rgb(109, 61, 109);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+}
+.btn:hover {
+  background: rgba(109, 61, 109, 0.6);
+}
+.btn:focus {
+  outline: 3px dotted rgb(109, 61, 109);
+  outline-offset: 3px;
+}
