@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 
 *,
 *::before,
@@ -11,5 +11,24 @@
 body {
   min-height: 100vh;
   width: 100vw;
-  font-family: 'Inter', sans-serif
+  font-family: "Inter", sans-serif;
+  background: #553055;
+}
+
+.App {
+  background: #4c2a4c;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 700px;
+  color: #eee;
+}
+
+.navbar {
+  padding: 10px 20px;
+  text-align: center;
+  background: #6d3d6d;
+}
+
+.navbar h1 {
+  margin: 10px 0;
 }
