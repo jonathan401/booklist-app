@@ -77,7 +77,8 @@ input[type='text']{
   outline: 0;
   transition: all 0.1s;
 }
-input[type="text"]:focus {
+input[type="text"]:focus,
+.btn:focus {
   outline: 3px dotted rgb(109, 61, 109);
   outline-offset: 3px;
 }
@@ -95,8 +96,4 @@ input[type="text"]:focus {
 }
 .btn:hover {
   background: rgba(109, 61, 109, 0.6);
-}
-.btn:focus {
-  outline: 3px dotted rgb(109, 61, 109);
-  outline-offset: 3px;
 }
